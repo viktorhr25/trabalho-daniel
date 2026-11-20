@@ -1,15 +1,14 @@
 <?php
-interface FormaPagamento
+class Pagamento
 {
-    public function pagar(float $valor): bool;
-}
-
-class Pix implements FormaPagamento
-{
-    public function pagar(float $valor): bool
+    public function pagar(string $tipo, float $valor): void
     {
-        echo "Pago R$ $valor via Pix\n";
-        return true;
+        if ($tipo === 'pix') {
+            echo "Pago via Pix\n";
+        } elseif ($tipo === 'cartao') {
+            echo "Pago no cartão\n";
+        } elseif ($tipo === 'dinheiro') {
+            echo "Pago em dinheiro\n";
+        }
     }
 }
-?>
