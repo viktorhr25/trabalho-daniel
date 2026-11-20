@@ -27,6 +27,14 @@ class itemPedido
         $this->quantidade += $qtd;
     }
 
+    public function diminuirQuantidade(int $qtd):void
+    {
+        if($this->quantidade - $qtd <= 0){
+            throw new InvalidArgumentException("A quantidade não pode ser menor ou igual a zero."); #lança uma mensagem de erro caso a quantidade digitada seja menor ou igual a zero
+        }
+        $this->quantidade -= $qtd;
+    }
+
     public function calcularSubtotal(): float
     {
         return $this->item->getPreco() * $this->quantidade;
