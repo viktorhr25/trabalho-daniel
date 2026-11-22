@@ -12,6 +12,11 @@ public function __construct(int $id, string $nome, float $preco)
     $this->preco = $preco;
 }
 
+public function getId(): int
+{
+    return $this->id;
+}
+
 public function getNome():string
 {
     return $this->nome;

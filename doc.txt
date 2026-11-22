@@ -1,0 +1,6 @@
+
+index.php{
+
+feof(STDIN) serve para acabar o programa
+$opcao === '' && feof(STDIN) condição que diz q se a opção vier vazia e a entrada acabou finaliza o loop do menu
+}

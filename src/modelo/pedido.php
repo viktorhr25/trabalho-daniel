@@ -23,7 +23,7 @@ class pedido
         #Se o item já existir no pedido, apenas aumenta a quantidade
         foreach($this -> itens as $itemPedido)
             {
-                if($itemPedido -> gerItem() -> getId() === $item -> getId())
+                if($itemPedido -> getItem() -> getId() === $item -> getId())
                     {
                         $itemPedido -> aumentarQuantidade($quantidade);
                         return;
@@ -51,7 +51,7 @@ class pedido
     {
         $total = 0.0;
             foreach ($this->itens as $itemPedido) {
-                $total += $itemPedido->getSubtotal();
+                $total += $itemPedido->calcularSubtotal();
             }
         return $total;
     }
